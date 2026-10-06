@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+  <!-- Wolf of Wall Street cinematic skyline silhouette -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0f12"/>
+      <stop offset="1" stop-color="#14171c"/>
+    </linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9a227"/>
+      <stop offset="1" stop-color="#6b570f"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#sky)">
+    <rect x="0" y="190" width="90" height="130"/>
+    <rect x="70" y="150" width="70" height="170"/>
+    <rect x="130" y="210" width="60" height="110"/>
+    <rect x="185" y="120" width="80" height="200"/>
+    <rect x="255" y="180" width="55" height="140"/>
+    <rect x="305" y="140" width="95" height="180"/>
+    <rect x="390" y="200" width="60" height="120"/>
+    <rect x="440" y="90" width="90" height="230"/>
+    <rect x="520" y="160" width="65" height="160"/>
+    <rect x="575" y="110" width="100" height="210"/>
+    <rect x="665" y="185" width="55" height="135"/>
+    <rect x="715" y="70" width="105" height="250"/>
+    <rect x="810" y="150" width="70" height="170"/>
+    <rect x="870" y="105" width="90" height="215"/>
+    <rect x="950" y="175" width="60" height="145"/>
+    <rect x="1000" y="125" width="85" height="195"/>
+    <rect x="1075" y="195" width="60" height="125"/>
+    <rect x="1125" y="95" width="95" height="225"/>
+    <rect x="1210" y="165" width="65" height="155"/>
+    <rect x="1265" y="130" width="85" height="190"/>
+    <rect x="1340" y="185" width="100" height="135"/>
+  </g>
+  <g fill="url(#win)" opacity="0.34">
+    <!-- Window lights -->
+    <g>
+      <rect x="200" y="140" width="4" height="4"/><rect x="212" y="140" width="4" height="4"/>
+      <rect x="200" y="156" width="4" height="4"/><rect x="224" y="156" width="4" height="4"/>
+      <rect x="212" y="172" width="4" height="4"/><rect x="236" y="140" width="4" height="4"/>
+      <rect x="248" y="172" width="4" height="4"/><rect x="224" y="188" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="460" y="110" width="4" height="4"/><rect x="474" y="110" width="4" height="4"/>
+      <rect x="488" y="126" width="4" height="4"/><rect x="460" y="142" width="4" height="4"/>
+      <rect x="500" y="142" width="4" height="4"/><rect x="474" y="158" width="4" height="4"/>
+      <rect x="512" y="174" width="4" height="4"/><rect x="460" y="174" width="4" height="4"/>
+      <rect x="488" y="190" width="4" height="4"/><rect x="500" y="206" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="600" y="130" width="4" height="4"/><rect x="616" y="130" width="4" height="4"/>
+      <rect x="632" y="146" width="4" height="4"/><rect x="600" y="162" width="4" height="4"/>
+      <rect x="648" y="162" width="4" height="4"/><rect x="616" y="178" width="4" height="4"/>
+      <rect x="640" y="194" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="740" y="90" width="4" height="4"/><rect x="756" y="90" width="4" height="4"/>
+      <rect x="772" y="106" width="4" height="4"/><rect x="740" y="122" width="4" height="4"/>
+      <rect x="788" y="122" width="4" height="4"/><rect x="756" y="138" width="4" height="4"/>
+      <rect x="740" y="154" width="4" height="4"/><rect x="780" y="170" width="4" height="4"/>
+      <rect x="764" y="186" width="4" height="4"/><rect x="740" y="202" width="4" height="4"/>
+      <rect x="796" y="218" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="895" y="125" width="4" height="4"/><rect x="910" y="125" width="4" height="4"/>
+      <rect x="895" y="141" width="4" height="4"/><rect x="926" y="157" width="4" height="4"/>
+      <rect x="910" y="173" width="4" height="4"/><rect x="940" y="173" width="4" height="4"/>
+      <rect x="895" y="189" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="1020" y="145" width="4" height="4"/><rect x="1036" y="145" width="4" height="4"/>
+      <rect x="1052" y="161" width="4" height="4"/><rect x="1020" y="177" width="4" height="4"/>
+      <rect x="1044" y="193" width="4" height="4"/><rect x="1060" y="209" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="1145" y="115" width="4" height="4"/><rect x="1162" y="115" width="4" height="4"/>
+      <rect x="1178" y="131" width="4" height="4"/><rect x="1145" y="147" width="4" height="4"/>
+      <rect x="1194" y="147" width="4" height="4"/><rect x="1162" y="163" width="4" height="4"/>
+      <rect x="1178" y="179" width="4" height="4"/><rect x="1145" y="195" width="4" height="4"/>
+      <rect x="1200" y="211" width="4" height="4"/>
+    </g>
+    <g>
+      <rect x="1285" y="150" width="4" height="4"/><rect x="1300" y="150" width="4" height="4"/>
+      <rect x="1285" y="166" width="4" height="4"/><rect x="1316" y="182" width="4" height="4"/>
+      <rect x="1300" y="198" width="4" height="4"/>
+    </g>
+  </g>
+  <!-- Spire antenna details -->
+  <g stroke="#3a414b" stroke-width="2">
+    <line x1="767" y1="70" x2="767" y2="30"/>
+    <line x1="485" y1="90" x2="485" y2="58"/>
+    <line x1="1172" y1="95" x2="1172" y2="66"/>
+  </g>
+  <circle cx="767" cy="28" r="3" fill="#e8c558"/>
+  <circle cx="485" cy="56" r="2.4" fill="#e8c558"/>
+  <circle cx="1172" cy="64" r="2.4" fill="#e8c558"/>
+</svg>

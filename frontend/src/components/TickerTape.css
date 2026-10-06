@@ -1,0 +1,121 @@
+/* ══════════ Ticker tape — live market + Meridia Wire strip ══════════ */
+
+.ticker-tape {
+  display: flex;
+  align-items: stretch;
+  height: 32px;
+  border-bottom: 1px solid var(--border-primary);
+  background: linear-gradient(180deg, #0c0e10 0%, #090a0c 100%);
+  position: relative;
+  z-index: 60;
+}
+
+.tt-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--gold-bright);
+  border-right: 1px solid rgba(201, 162, 39, 0.28);
+  background: rgba(201, 162, 39, 0.06);
+  flex-shrink: 0;
+}
+
+.tt-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+  animation: livePing 1.6s infinite;
+}
+
+.tt-viewport {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Fade the tape out at both edges — cinematic roll-off */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+}
+
+.tt-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: tickerScroll 45s linear infinite;
+  will-change: transform;
+}
+
+.ticker-tape:hover .tt-track {
+  animation-play-state: paused;
+}
+
+.tt-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tt-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  font-size: 0.82rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tt-quote b {
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.tt-price {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tt-chg {
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.tt-news {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  font-size: 0.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.tt-news em {
+  font-style: normal;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tt-flash {
+  color: var(--red-light);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  animation: pulseGold 1.4s ease-in-out infinite;
+}
+
+.tt-cal {
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}

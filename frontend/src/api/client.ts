@@ -20,8 +20,18 @@ function getHeaders(): Record<string, string> {
 
 async function handleResponse(res: Response) {
   if (!res.ok) {
-    const data = await res.json().catch(() => ({ detail: 'Request failed' }));
-    throw new Error(data.detail || `HTTP ${res.status}`);
+    const data = await res.json().catch(() => null);
+    // FastAPI can return `detail` as a string (HTTPException) or an array
+    // (validation errors) — normalize both into a readable message.
+    let detail: unknown = data?.detail;
+    if (Array.isArray(detail)) {
+      detail = detail
+        .map((d) => (typeof d === 'string' ? d : (d as { msg?: string })?.msg || JSON.stringify(d)))
+        .join('; ');
+    } else if (detail != null && typeof detail !== 'string') {
+      detail = JSON.stringify(detail);
+    }
+    throw new Error((detail as string) || `Request failed (HTTP ${res.status})`);
   }
   return res.json();
 }

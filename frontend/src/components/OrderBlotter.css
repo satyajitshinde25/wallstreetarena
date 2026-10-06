@@ -1,0 +1,65 @@
+.blotter {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.blotter .data-table {
+  flex: 1;
+}
+
+.blotter .num { text-align: right; }
+.blotter th.num { text-align: right; }
+
+.blotter-tick {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.tick-arrow {
+  color: var(--gold-bright);
+}
+
+.blotter-side {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.side-buy { color: var(--green); }
+.side-sell { color: var(--red); }
+
+.blotter-sym {
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+.blotter-fee {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.pending-label {
+  color: var(--gold-bright);
+  font-style: italic;
+  font-size: 0.78rem;
+}
+
+.blotter-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 42px 0 !important;
+  font-size: 0.9rem;
+}
+
+.blotter-foot {
+  padding: 8px 12px;
+  border-top: 1px solid var(--border-primary);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}

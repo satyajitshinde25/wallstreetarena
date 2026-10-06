@@ -1,0 +1,38 @@
+.positions {
+  overflow-x: auto;
+}
+
+.positions .num {
+  text-align: right;
+}
+
+.positions th.num {
+  text-align: right;
+}
+
+.pos-ticker {
+  font-weight: 800;
+  color: var(--gold-bright);
+  margin-right: 8px;
+  letter-spacing: 0.04em;
+}
+
+.pos-name {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.pos-weight {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.positions-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 42px 0 !important;
+  font-size: 0.9rem;
+}

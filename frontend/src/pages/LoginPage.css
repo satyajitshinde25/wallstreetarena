@@ -1,124 +1,331 @@
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-hero);
+/* ══════════════════════════════════════════════════════════════════
+   THE WALL STREET ARENA — Login
+   Full-screen split: cinematic visual (58%) + premium near-black
+   panel (42%). Uses the global design tokens from index.css.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Editorial serif for the wordmark only — everything else stays on the
+   dashboard's Archivo/Inter stack. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
+.arena-login {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* ── Left: cinematic Wall Street image ── */
+
+.arena-visual {
   position: relative;
+  overflow: hidden;
+  background: #07080a;
+}
+
+.arena-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* bias left so the bull statue and executive stay in frame on
+     taller-than-reference viewports — no unnatural stretching */
+  object-position: 32% 50%;
+}
+
+/* ── Right: premium near-black panel ── */
+
+.arena-panel {
+  position: relative;
+  background: linear-gradient(180deg, #0e1215 0%, #0b0e11 55%, #090c0e 100%);
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
   overflow: hidden;
 }
 
-.login-bg-grid {
+/* Faint warm gold atmosphere behind the brand block */
+.arena-panel::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.login-bg-glow {
-  position: absolute;
-  top: 30%;
+  top: -14%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  transform: translateX(-50%);
+  width: 130%;
+  height: 58%;
+  background: radial-gradient(ellipse at 50% 34%, rgba(201, 162, 39, 0.11), transparent 62%);
   pointer-events: none;
 }
 
-.login-container {
-  background: rgba(17, 24, 39, 0.85);
-  border: 1px solid var(--border-secondary);
-  border-radius: var(--radius-xl);
-  padding: 48px 40px;
-  width: 420px;
-  max-width: 90vw;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+.arena-panel-inner {
   position: relative;
   z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(22px, 4vh, 46px) clamp(26px, 17%, 150px);
 }
 
-.login-logo {
+/* ── Brand block ── */
+
+.arena-brand {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: clamp(28px, 10.3vh, 104px);
 }
 
-.login-logo-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: 16px;
+.arena-mark {
+  width: clamp(46px, 6vh, 60px);
+  height: auto;
+  color: #d6b176;
+  filter: drop-shadow(0 0 10px rgba(214, 177, 118, 0.35));
+}
+
+.arena-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(14px, 5.6vh, 56px);
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.arena-the {
+  font-size: clamp(14px, 1.15vw, 22px);
+  letter-spacing: 0.32em;
+  text-indent: 0.32em; /* optical centering with letterspacing */
+  color: #f4e7cf;
+}
+
+.arena-name {
+  margin-top: clamp(6px, 2.4vh, 24px);
+  font-size: clamp(30px, 3.2vw, 62px);
+  letter-spacing: 0.045em;
+  color: #f3e6cd;
+}
+
+.arena-arena {
+  margin-top: clamp(8px, 4vh, 38px);
+  font-size: clamp(17px, 1.7vw, 32px);
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  background: linear-gradient(180deg, #f4deae 0%, #e0b579 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.arena-rule {
+  width: 47%;
+  height: 1px;
+  margin: clamp(20px, 5vh, 50px) auto 0;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(215, 175, 110, 0.8), transparent);
+}
+
+.arena-tagline {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: clamp(8px, 0.9vw, 18px);
+  margin-top: clamp(14px, 3.4vh, 34px);
+  font-family: var(--font-display);
+  font-size: clamp(11px, 1vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-left: 0.28em; /* offset trailing letterspace for true centering */
+  text-transform: uppercase;
+  color: #d3b888;
 }
 
-.login-logo h1 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.arena-tagline i {
+  font-style: normal;
+  color: rgba(211, 184, 136, 0.45);
 }
 
-.login-subtitle {
+/* ── Form ── */
+
+.arena-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 4.3vh, 42px);
+}
+
+.arena-field {
+  position: relative;
+}
+
+.arena-field-icon {
+  position: absolute;
+  left: clamp(17px, 1.4vw, 23px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  color: #767d87;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.arena-field:focus-within .arena-field-icon {
+  color: var(--gold-bright);
+}
+
+.arena-input {
+  width: 100%;
+  height: clamp(54px, 9.6vh, 92px);
+  padding: 0 clamp(16px, 1.4vw, 22px) 0 clamp(50px, 4vw, 60px);
+  background: #0a0d0f;
+  border: 1px solid rgba(214, 186, 138, 0.28);
+  border-radius: 16px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arena-input::placeholder {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 4px;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.arena-input:focus {
+  border-color: rgba(232, 197, 88, 0.8);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.18), var(--glow-gold);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.arena-input:focus-visible {
+  outline: none;
 }
 
-.form-group label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
+/* ── Error ── */
 
-.login-error {
-  background: var(--red-bg);
-  border: 1px solid var(--red-border);
-  color: var(--red-light);
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  font-size: 0.85rem;
+.arena-error {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 11px 14px;
+  background: var(--red-bg);
+  border: 1px solid var(--red-border);
+  border-radius: 10px;
+  color: var(--red-light);
+  font-size: 0.85rem;
 }
 
-.login-btn {
-  width: 100%;
-  padding: 14px;
-  font-size: 1rem;
-  margin-top: 4px;
+/* ── Submit ── */
+
+.arena-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 1.3vw, 20px);
+  height: clamp(54px, 9.4vh, 90px);
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #e9cda1 0%, #dfc08f 48%, #d0a973 100%);
+  color: #221a0e;
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.2vw, 19px);
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
 }
 
-.login-info {
-  margin-top: 28px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  line-height: 1.8;
+.arena-submit .arena-arrow {
+  transition: transform 0.25s ease;
 }
 
-.login-warning {
-  color: var(--yellow);
-  margin-top: 8px;
+.arena-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 40px rgba(201, 162, 39, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.arena-submit:hover:not(:disabled) .arena-arrow {
+  transform: translateX(6px);
+}
+
+.arena-submit:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.99);
+}
+
+.arena-submit:disabled {
+  opacity: 0.78;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Dark spinner on the gold button (index.css default is gold-on-gold) */
+.arena-submit .loading-spinner {
+  border: 2.5px solid rgba(34, 26, 14, 0.25);
+  border-top-color: #221a0e;
+}
+
+/* ── Accessibility ── */
+
+.arena-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1100px) {
+  .arena-panel-inner {
+    padding-left: clamp(22px, 10%, 60px);
+    padding-right: clamp(22px, 10%, 60px);
+  }
+}
+
+@media (max-width: 900px) {
+  .arena-login {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(170px, 32vh) auto;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .arena-visual img {
+    object-position: center 28%;
+  }
+
+  .arena-panel {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .arena-panel-inner {
+    padding: clamp(28px, 5vh, 44px) clamp(20px, 8vw, 48px) clamp(36px, 6vh, 52px);
+  }
+
+  .arena-input,
+  .arena-submit {
+    height: clamp(56px, 8vh, 72px);
+  }
+}
+
+/* Very short desktop windows: allow scrolling rather than clipping */
+@media (min-width: 901px) and (max-height: 620px) {
+  .arena-login {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .arena-panel-inner {
+    min-height: 100dvh;
+  }
 }
